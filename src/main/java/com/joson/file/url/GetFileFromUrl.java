@@ -14,7 +14,7 @@ import java.net.URL;
 public class GetFileFromUrl {
 	public static void main(String[] args) throws IOException {
 		try {
-			URL url = new URL("http://yyfinancesmall.bs2dl.yy.com/yyfinance_teacher_channel1.txt");
+			URL url = new URL("http://yyfinancesmall.bs2dl.yy.com/test.txt");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 			
 			/*while (reader.read() != -1) { //错误的方式 原因： reader.read() 会自动向前读一个字节 导致每行数据丢失一个字节
