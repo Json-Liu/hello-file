@@ -3,4 +3,21 @@
   <groupId>com.joson</groupId>
   <artifactId>hello-file</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    	<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.0.13</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.0.13</version>
+		</dependency>
+	  	<dependency>
+		  <groupId>org.apache.poi</groupId>
+		  <artifactId>poi</artifactId>
+		  <version>3.15-beta2</version>
+		</dependency>
+  </dependencies>
 </project>

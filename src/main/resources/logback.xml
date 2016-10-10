@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+
+	<!-- Handle JUL -->
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date [%thread] [%file:%line] [%level %logger{0}] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ACCESS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logs.dir}/container-access.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logs.dir}/history/api-subscribe.zhiniu8.com-access.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%date [%thread] [%file:%line] [%level %logger{0}] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logs.dir}/api-subscribe.zhiniu8.com.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logs.dir}/history/api-subscribe.zhiniu8.com.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%date [%thread] [%file:%line] [%level %logger{0}] - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	
+	<logger name="com.joson" additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+	<logger name="org.apache" level="WARN" />
+	<logger name="org.mybatis" level="WARN" />
+	<logger name="org.springframework" level="WARN" />
+	<root level="${logs.level}">
+		<appender-ref ref="${logs.ref}" />
+	</root>
+</configuration>
+
