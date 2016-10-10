@@ -13,9 +13,9 @@
 	</appender>
 
 	<appender name="ACCESS" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${logs.dir}/container-access.log</file>
+		<file>${logs.dir}/system-access.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${logs.dir}/history/api-subscribe.zhiniu8.com-access.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>${logs.dir}/history/system-access.%d{yyyy-MM-dd}.log</fileNamePattern>
 			<maxHistory>60</maxHistory>
 		</rollingPolicy>
 		<encoder>
@@ -25,9 +25,9 @@
 	</appender>
 
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${logs.dir}/api-subscribe.zhiniu8.com.log</file>
+		<file>${logs.dir}/system.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${logs.dir}/history/api-subscribe.zhiniu8.com.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>${logs.dir}/history/system.%d{yyyy-MM-dd}.log</fileNamePattern>
 			<maxHistory>60</maxHistory>
 		</rollingPolicy>
 		<encoder>
